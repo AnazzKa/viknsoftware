@@ -87,7 +87,6 @@ class Card extends CI_Controller
     {
         if(!isset($_GET['cardid']))
         {
-
             $card['card'] = $this->Card_model->getallcard();
             $this->load->view('admin/head');
             $this->load->view('admin/header');
@@ -99,6 +98,8 @@ class Card extends CI_Controller
             $cardid= $_GET['cardid'];
             $card['data']=$this->Card_model->get_single_card($cardid);
             $card['card'] = $this->Card_model->getallcard();
+//            echo "<pre>";
+//            print_r($card);exit;
             $card['edit']=$cardid;
             $this->load->view('admin/head');
             $this->load->view('admin/header');
