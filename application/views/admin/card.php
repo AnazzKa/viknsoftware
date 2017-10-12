@@ -26,11 +26,11 @@
                                     <div class="col-sm-10" style="margin-top: 10px;">
                                         <select type="text" class="form-control" name="card_type">
                                             <?php foreach ($card as $value) { ?>
-                                                <option
+                                                <option <?php if(isset($data)){ if($data[0]->card_type_id==$value->card_id){echo "selected";} } ?>
                                                     value="<?php echo $value->card_id ?>"><?php echo $value->cardtype ?></option>
                                             <?php } ?>
                                         </select>
-                                        <input type="hidden" value="" name="editid">
+                                        <input type="hidden" value="<?php if(isset($edit)){ echo $edit; } ?>" name="editid">
                                     </div>
                                 </div>
                                 <div class="form-group" style="padding: 16 0 30px 0">
@@ -38,7 +38,7 @@
                                         Name<span style="color: red">*</span></label>
 
                                     <div class="col-sm-10" style="margin-top: 10px;">
-                                        <input type="text" class="form-control" id="phtypeoto" name="card_name">
+                                        <input type="text" class="form-control" value="<?php if(isset($data)){ echo $data[0]->card_name; } ?>" id="phtypeoto" name="card_name">
                                     </div>
                                 </div>
 
@@ -47,7 +47,7 @@
                                             style="color: red">*</span></label>
 
                                     <div class="col-sm-10" style="margin-top: 10px;">
-                                        <input type="text" class="form-control" id="phtypeoto" name="card_number">
+                                        <input type="text" class="form-control" id="phtypeoto" value="<?php if(isset($data)){ echo $data[0]->cartd_number; } ?>" name="card_number">
                                     </div>
                                 </div>
                                 <div class="form-group" style="padding: 16 0 30px 0">
@@ -55,7 +55,7 @@
                                         Date<span style="color: red">*</span></label>
 
                                     <div class="col-sm-10" style="margin-top: 10px;">
-                                        <input type="date" class="form-control" id="phtypeoto" name="card_date">
+                                        <input type="date" class="form-control" id="phtypeoto" value="<?php if(isset($data)){ echo $data[0]->card_date; } ?>" name="card_date">
                                     </div>
                                 </div>
                                 <div class="form-group" style="padding: 16 0 30px 0">
@@ -63,7 +63,7 @@
                                         Price<span style="color: red">*</span></label>
 
                                     <div class="col-sm-10" style="margin-top: 10px;">
-                                        <input type="text" class="form-control" id="phtypeoto" name="card_price">
+                                        <input type="text" class="form-control" value="<?php if(isset($data)){ echo $data[0]->card_price; } ?>" name="card_price">
                                     </div>
                                 </div>
                                 <div class="form-group" style="padding: 16 0 30px 0">
@@ -71,7 +71,7 @@
                                         Key<span style="color: red">*</span></label>
 
                                     <div class="col-sm-10" style="margin-top: 10px;">
-                                        <input type="text" class="form-control" id="phtypeoto" name="card_key">
+                                        <input type="text" class="form-control" value="<?php if(isset($data)){ echo $data[0]->card_serial_key; } ?>" name="card_key">
                                     </div>
                                 </div>
 
@@ -80,7 +80,7 @@
                                             style="color: red">*</span></label>
 
                                     <div class="col-sm-10" style="margin-top: 10px;">
-                                        <input type="text" class="form-control" id="phtypeoto" name="card_offer">
+                                        <input type="text" class="form-control" value="<?php if(isset($data)){ echo $data[0]->card_offer; } ?>" name="card_offer">
                                     </div>
                                 </div>
                                 <div class="form-group" style="padding: 16 0 30px 0">
@@ -88,7 +88,7 @@
                                         Name<span style="color: red">*</span></label>
 
                                     <div class="col-sm-10" style="margin-top: 10px;">
-                                        <input type="text" class="form-control" id="phtypeoto" name="card_username">
+                                        <input type="text" class="form-control" value="<?php if(isset($data)){ echo $data[0]->card_username; } ?>" name="card_username">
                                     </div>
                                 </div>
                                 <div class="form-group" style="padding: 16 0 30px 0">
@@ -96,7 +96,7 @@
                                            style="margin-top: 10px;">Password<span style="color: red">*</span></label>
 
                                     <div class="col-sm-10" style="margin-top: 10px;">
-                                        <input type="text" class="form-control" id="phtypeoto" name="card_password">
+                                        <input type="text" class="form-control" required name="card_password">
                                     </div>
                                 </div>
                                 <div class="form-group" style="padding: 16 0 30px 0">
