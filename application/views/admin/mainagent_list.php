@@ -53,8 +53,8 @@
               <td><?php echo  $value->phone ?></td>
               <td><?php echo  $value->email ?></td>
               
-              <td><a  href="<?php echo base_url ?>userdel?userid=<?php echo $value->userid ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this item?');" ><i class="fa fa-trash-o"></i></a>
-                  <a href="<?php echo base_url ?>useredit?useredit=<?php echo $value->userid ?>" class="btn btn-primary" ><i class="fa fa-pencil"></i></a></td>
+              <td><a  href="<?php echo base_url ?>mainagentdel?userid=<?php echo $value->userid ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this item?');" ><i class="fa fa-trash-o"></i></a>
+                  <a href="<?php echo base_url ?>mainagentedit?useredit=<?php echo $value->userid ?>" class="btn btn-primary" ><i class="fa fa-pencil"></i></a></td>
              </tr>
               <?php } ?> </tbody> 
               
@@ -76,5 +76,13 @@
 
 
 
-    </script>
+        <script>
+function deleletconf(){
+
+var result = confirm("Want to delete?");
+if (result) {
+    //Logic to delete the item
+}
+}
+</script>
         

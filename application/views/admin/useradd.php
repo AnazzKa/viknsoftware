@@ -20,9 +20,9 @@
                                         <label class="col-sm-2 col-sm-2 control-label" style="margin-top: 10px;">Select type<span style="color: red">*</span></label>
                                         <div class="col-sm-10" style="margin-top: 10px;">
                                             <select type="text" onchange='parentid(this.value);' class="form-control" id ="phtypeoto"  name="type" required="">
-                                              <option selected>Select Agent</option>
+                                              <option >Select Agent</option>
                                                <?php foreach ($usertype as $row) {?>
-                                             
+
                                              <option  value="<?php echo $row->user_id ?>"><?php echo $row->usertype ?></option>
                                            <?php } ?>
 
@@ -34,11 +34,11 @@
 
                                        
              
-
-                                     <div class="form-group" id="parent" style="padding: 16 0 30px 0;">
+                                  <div id="parent" style="display: none;">
+                                    <div class="form-group" id="" style="padding: 16 0 30px 0;">
                                         <label class="col-sm-2 col-sm-2 control-label" style="margin-top: 10px;">Select Parent<span style="color: red">*</span></label>
                                         <div class="col-sm-10" style="margin-top: 10px;">
-                                            <select type="text" class="form-control" id ="phtypeoto"  name="parent_id" >
+                                            <select type="text" class="form-control" id ="phtypeoto"  name="parent_id" onchange="parentid(this.value);" >
                                               <option selected>Select parent</option>
                                                <?php foreach ($mainagent as $row) {?>
                                              <option  value="<?php echo $row->userid ?>"><?php echo $row->fname ?></option>
@@ -46,6 +46,7 @@
                                             </select>
                                         </div>
                                     </div>
+                                  </div>
 
                                        <div class="form-group" style="padding: 16 0 30px 0">
                                         <label class="col-sm-2 col-sm-2 control-label" style="margin-top: 10px;">First Name<span style="color: red">*</span></label>
@@ -92,16 +93,16 @@
 
                               </form>
     </body>
-<!-- <script type="text/javascript">
+<script type="text/javascript">
 function parentid(val){
    var element=document.getElementById('parent');
- if(val=='Select Agent'||val=='Sub')
+ if(val=='Select Agent'||val=='3')
    element.style.display='block';
  else  
    element.style.display='none';
 }
 
-</script> -->
+</script>
 
 
 

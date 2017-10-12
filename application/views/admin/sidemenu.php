@@ -144,12 +144,10 @@
           </ul>
             </li>
             <?php } ?>
-<?php if ($this->session->userdata['TYPE']==0) {
+<?php if ($this->session->userdata['TYPE']==1) {
     
  ?>
-
-
-         <li class="sub-menu">
+  <li class="sub-menu">
                 <a href="javascript:;" >
                     <i class="fa fa-plus"></i>
                     <span>User</span></a>
@@ -186,8 +184,8 @@
                       </ul>
                     
             </li>
-        <?php } ?>
-<?php if ($this->session->userdata['TYPE']==1) {
+            <?php } ?>
+<?php if ($this->session->userdata['TYPE']==2) {
     
  ?>
            <li class="sub-menu">
@@ -229,7 +227,7 @@
         </li>
 
 <?php } ?>
-<?php if ($this->session->userdata['TYPE']==2){
+<?php if ($this->session->userdata['TYPE']==3){
     
  ?>
 

@@ -27,7 +27,7 @@ class Main_agent_model extends CI_Model
     {
 
         // echo "SELECT * FROM vk_usertype WHERE user_id=2";exit;
-        $sql=$this->db->query("SELECT * FROM vk_usertype WHERE user_id=2");
+        $sql=$this->db->query("SELECT * FROM vk_usertype WHERE user_id=3");
         return $sql->result();
     }
 

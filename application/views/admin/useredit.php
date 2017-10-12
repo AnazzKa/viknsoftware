@@ -103,7 +103,7 @@
 <script type="text/javascript">
 function Check(val){
    var element=document.getElementById('parent');
- if(val=='Select type'||val=='Sub agent')
+ if(val=='Select type'||val=='3')
    element.style.display='block';
 
  else  
