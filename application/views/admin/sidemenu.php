@@ -147,6 +147,21 @@
 <?php if ($this->session->userdata['TYPE']==0) {
     
  ?>
+
+
+         <li class="sub-menu">
+                <a href="javascript:;" >
+                    <i class="fa fa-plus"></i>
+                    <span>User</span></a>
+                <ul class="sub">
+                    
+                    <li><a  href="<?php echo base_url ?>mainagent_add"><i class="fa fa-pencil"></i>Add</a></li>
+                    <li><a  href="<?php echo base_url ?>mainagent_list"><i class="fa fa-pencil"></i>List</a></li>
+                      </ul>
+                    
+            </li>   
+
+
              <li class="sub-menu">
                 <a href="javascript:;" >
                     <i class="fa fa-plus"></i>

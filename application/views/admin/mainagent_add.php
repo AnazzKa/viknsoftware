@@ -1,4 +1,4 @@
-<form action="<?php echo base_url ?>user_check" method="POST">
+<form action="<?php echo base_url ?>mainagent_action" method="POST">
     <section id="main-content">
           <section class="wrapper">
             <div class="col-lg-12">
@@ -20,10 +20,9 @@
                                         <label class="col-sm-2 col-sm-2 control-label" style="margin-top: 10px;">Select type<span style="color: red">*</span></label>
                                         <div class="col-sm-10" style="margin-top: 10px;">
                                             <select type="text" onchange='parentid(this.value);' class="form-control" id ="phtypeoto"  name="type" required="">
-                                              <option selected>Select Agent</option>
+                                               <!-- <option selected>Select Agent</option> -->
                                                <?php foreach ($usertype as $row) {?>
-                                             
-                                             <option  value="<?php echo $row->user_id ?>"><?php echo $row->usertype ?></option>
+                                             <option selected="" value="<?php echo $row->user_id ?>"><?php echo $row->usertype ?></option>
                                            <?php } ?>
 
                                             </select>
@@ -34,18 +33,6 @@
 
                                        
              
-
-                                     <div class="form-group" id="parent" style="padding: 16 0 30px 0;">
-                                        <label class="col-sm-2 col-sm-2 control-label" style="margin-top: 10px;">Select Parent<span style="color: red">*</span></label>
-                                        <div class="col-sm-10" style="margin-top: 10px;">
-                                            <select type="text" class="form-control" id ="phtypeoto"  name="parent_id" >
-                                              <option selected>Select parent</option>
-                                               <?php foreach ($mainagent as $row) {?>
-                                             <option  value="<?php echo $row->userid ?>"><?php echo $row->fname ?></option>
-                                           <?php } ?>
-                                            </select>
-                                        </div>
-                                    </div>
 
                                        <div class="form-group" style="padding: 16 0 30px 0">
                                         <label class="col-sm-2 col-sm-2 control-label" style="margin-top: 10px;">First Name<span style="color: red">*</span></label>
@@ -63,9 +50,10 @@
                                     <div class="form-group" style="padding: 16 0 30px 0">
                                         <label class="col-sm-2 col-sm-2 control-label" style="margin-top: 10px;">Phone<span style="color: red">*</span></label>
                                         <div class="col-sm-10" style="margin-top: 10px;">
-                                            <input  type="tel" class="form-control" id ="phtypeoto"  name="phone" minlength="10" required="">
+                                            <input  type="tel" class="form-control" id ="num"   name="phone" required=""  minlength="10" return false;" ><span id="message"></span>
                                         </div>
                                     </div>
+
                                     <div class="form-group" style="padding: 16 0 30px 0">
                                         <label class="col-sm-2 col-sm-2 control-label" style="margin-top: 10px;">Email<span style="color: red">*</span></label>
                                         <div class="col-sm-10" style="margin-top: 10px;">
@@ -91,18 +79,23 @@
 
 
                               </form>
-    </body>
-<!-- <script type="text/javascript">
-function parentid(val){
-   var element=document.getElementById('parent');
- if(val=='Select Agent'||val=='Sub')
-   element.style.display='block';
- else  
-   element.style.display='none';
-}
-
-</script> -->
 
 
+<script type="text/javascript">
+         
+           function phoneno(){          
+            $('#phone').keypress(function(e) {
+                var a = [];
+                var k = e.which;
+
+                for (i = 48; i < 58; i++)
+                    a.push(i);
+
+                if (!(a.indexOf(k)>=0))
+                    e.preventDefault();
+            });
+        }
+      
+</script>
 
 </html>

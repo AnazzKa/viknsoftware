@@ -43,3 +43,17 @@ $route['sub_agent_sales'] = 'Suppliers/sub_agent_sales';
 //main Agent
 $route['main_cards_view'] = 'Main_agent/main_cards_view';
 $route['purchase_card'] = 'Main_agent/purchase_card';
+
+// pass change
+
+$route['change_password'] = 'Changepass/change_password';
+$route['pass_action'] = 'Changepass/pass_action';
+
+// main agent
+
+$route['mainagent_add'] = 'Main_agent/mainagent_add';
+$route['mainagent_action'] = 'Main_agent/mainagent_action';
+$route['mainagent_list'] = 'Main_agent/mainagent_list';
+$route['userdel'] = 'Main_agent/mainagent_del';
+$route['useredit'] ='Main_agent/mainagent_edit';
+$route['mainagent_update'] = 'Main_agent/mainagent_update';

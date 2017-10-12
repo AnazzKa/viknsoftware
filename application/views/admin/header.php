@@ -21,7 +21,8 @@
                 <ul class="dropdown-menu extended logout">
                     <div class="log-arrow-up"></div>
 
-                    <li><a href="<?php echo base_url ?>logout"><i class="fa fa-key"></i> Log Out</a></li>
+                       <center> <li><a href="<?php echo base_url ?>logout"><i class="fa fa-key"></i> Log Out</a></li>
+                     <li><a href="<?php echo base_url ?>change_password"><i class="fa fa-"></i>Change Password</a></li></center>
                 </ul>
             </li>
             <!-- user login dropdown end -->
