@@ -29,6 +29,7 @@
              <tr>
                <th>SL ID</th>
                <th>User Type</th>
+               <th>Image</th>
                <th>Added Date</th>
                <th>First Name</th>
                <th>Last Name</th>
@@ -46,6 +47,7 @@
              <tr>
               <td><?php echo $i++ ?></td>
               <td><?php echo $value->usertype; ?></td>
+              <td><img src="./assets/images/User/<?php echo $value->user_image ?>" height="50" widt="50" ></td>
               <td><?php echo $value->added_date; ?></td>
              <td><?php echo  $value->fname ?></td>
               <td><?php echo  $value->lname ?></td>
@@ -53,7 +55,7 @@
               <td><?php echo  $value->phone ?></td>
               <td><?php echo  $value->email ?></td>
               
-              <td><a  href="<?php echo base_url ?>userdel?userid=<?php echo $value->userid ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this item?');" ><i class="fa fa-trash-o"></i></a>
+              <td><a href="<?php echo base_url ?>userdel?userid=<?php echo $value->userid ?>&photo=<?php echo $value->user_image ?>" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this item?');" ><i class="fa fa-trash-o"></i></a>
                   <a href="<?php echo base_url ?>useredit?useredit=<?php echo $value->userid ?>" class="btn btn-primary" ><i class="fa fa-pencil"></i></a></td>
              </tr>
               <?php } ?> </tbody> 

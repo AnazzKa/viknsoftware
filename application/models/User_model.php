@@ -61,7 +61,7 @@ class User_model extends CI_Model {
     public function getmainagentid()
     {
 
-        $sql=$this->db->query("SELECT * from vk_users WHERE mainagent_subagent_sub=0");
+        $sql=$this->db->query("SELECT * from vk_users WHERE type_id=2");
         return $sql->result();
 
     }
@@ -72,14 +72,14 @@ class User_model extends CI_Model {
         // echo "SELECT * FROM vk_users WHERE parent_id='$userid'";exit;
         $qry=$this->db->query("SELECT * FROM vk_users WHERE parent_id='$userid'");
         $sq=$qry->num_rows();
-        if($sq>0){
+        // if($sq<0){
 
             $sql=$this->db->query("DELETE from vk_users WHERE userid='$userid'");
             return true;
-        }else{
+        // }else{
 
-            return false;
-        }
+        //     return false;
+        // }
     }
 
     public function getuseredit($useredit)
@@ -92,18 +92,48 @@ class User_model extends CI_Model {
 
     }
 
-    public function user_update($ueditid,$type,$parent,$fname,$lname,$phone,$email,$address,$addate)
+    public function user_update($ueditid,$type,$parent,$fname,$lname,$phone,$email,$address,$addate,$password,$imagename)
     {
 
         $dq=$this->db->query("SELECT `usertype` FROM `vk_usertype` WHERE `usertype`='Sub Agent'");
         $sq=$dq->num_rows();
         if($sq>0){
 
-
-            $sql=$this->db->query("UPDATE vk_users SET type_id='$type',parent_id='$parent',fname='$fname',lname='$lname',phone='$phone',email='$email',address='$address',modify_date='$addate' WHERE userid='$ueditid'");
-            return true;
+        unlink("assets/images/User/".$_GET['photo']);
+        $sql=$this->db->query("UPDATE vk_users SET type_id='$type',parent_id='$parent',fname='$fname',lname='$lname',phone='$phone',email='$email',password='$password',address='$address',modify_date='$addate',user_image='$imagename' WHERE userid='$ueditid'");
+        return true;
 
         }
+    }
+
+    public function getallsupplier()
+    {
+
+     $sql=$this->db->query("SELECT * from vk_users INNER JOIN vk_usertype ON type_id=user_id WHERE type_id=1");
+        return $sql->result();
+
+    }
+
+    public function getallmaingent()
+    {
+
+     $sql=$this->db->query("SELECT * from vk_users INNER JOIN vk_usertype ON type_id=user_id WHERE type_id=2");
+        return $sql->result();
+
+    }
+    public function getallsubagent()
+    {
+
+     $sql=$this->db->query("SELECT * from vk_users INNER JOIN vk_usertype ON type_id=user_id WHERE type_id=3");
+        return $sql->result();
+
+    }
+     public function getallnormaluser()
+    {
+
+     $sql=$this->db->query("SELECT * from vk_users INNER JOIN vk_usertype ON type_id=user_id WHERE type_id=4");
+        return $sql->result();
+
     }
 }
 ?>

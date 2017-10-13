@@ -4,9 +4,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'main';
 $route['admin'] = 'login/index';
 $route['Dashboard'] = 'home/login';
-$route['type'] = 'User/type';
 $route['userdel'] = 'User/userdel';
 
+// type
+
+$route['type'] = 'User/type';
+$route['typedelete'] = 'User/typedelete';
+$route['typedit'] = 'User/typedit';
+$route['type_update'] = 'User/type_update';
 // login
 
 $route['login_action'] = 'Login/login_action';
@@ -16,8 +21,6 @@ $route['logout'] = 'Login/logout';
 $route['useradd'] = 'User/useradd';
 $route['userlist'] = 'User/userlist';
 $route['user_action'] = 'User/user_action';
-$route['typedelete'] = 'User/typedelete';
-$route['typedit'] = 'User/typedit';
 $route['user_update'] = 'User/user_update';
 $route['user_check'] ='User/user_check';
 $route['useredit'] ='User/useredit';
@@ -57,3 +60,10 @@ $route['mainagent_list'] = 'Main_agent/mainagent_list';
 $route['mainagentdel'] = 'Main_agent/mainagent_del';
 $route['mainagentedit'] ='Main_agent/mainagent_edit';
 $route['mainagent_update'] = 'Main_agent/mainagent_update';
+
+// Admin main,supplier,sub agent list
+
+$route['supplier_list'] = 'User/supplier_list';
+$route['mainagent_list'] = 'User/mainagent_list';
+$route['subagent_list'] = 'User/subagent_list';
+$route['normaluser_list'] = 'User/normaluser_list';
