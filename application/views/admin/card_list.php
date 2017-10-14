@@ -54,7 +54,7 @@
                                     <td><?php echo $value->card_username ?></td>
 
                                     <td>
-                                        <a href="<?php echo base_url ?>cardsdelete?cardeleid=<?php echo $value->cards_id ?>"
+                                        <a onclick="return confirm('Are You Sure Want To Delete...')" href="<?php echo base_url ?>cardsdelete?cardeleid=<?php echo $value->cards_id ?>&pic=<?php echo $value->card_image ?>"
                                            class="btn btn-danger"><i class="fa fa-trash-o"></i></a>
                                         <a href="<?php echo base_url ?>cardsedit?cardid=<?php echo $value->cards_id ?>"
                                            class="btn btn-primary"><i class="fa fa-pencil"></i></a></td>
