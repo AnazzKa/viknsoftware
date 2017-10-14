@@ -67,8 +67,9 @@ class Card extends CI_Controller
     public function cardsdelete()
     {
         $cardid = $_GET['cardeleid'];
+        $pic = $_GET['pic'];
         $this->Card_model->cardsdelid($cardid);
-
+unlink("./assets/card/".$pic);
         $this->session->set_flashdata("msg", "<p class='alert alert-success'>Cards Deleted</p>");
         header('Location:' . base_url . 'card_list');
     }
